@@ -1,0 +1,21 @@
+.searchbox{
+    padding: 0.5rem 1rem;
+    font-family: "roboto";
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    background-color: var(--co1);
+    border: none;
+    font-size: 0.9rem;
+    color: var(--co3);
+    /* box-shadow: none; */
+}
+.searchbox::placeholder{
+    font-family: "roboto";
+    font-weight: 300;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+.searchbox:focus{
+    outline: none;
+    }
+

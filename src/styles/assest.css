@@ -1,0 +1,125 @@
+:root{
+    --co1:#f3f6f8 ;
+    --co2:#3b3b3b;
+    --co3:#292525;
+    --wHeader:500;
+    --wButton:"normal";
+    
+}
+
+
+/* butler font */
+
+@font-face {
+    font-family: 'Butler';
+    src: url('../assest/fonts/butler/Butler-UltraLight.woff2') format('woff2'),
+        url('../assest/fonts/butler/Butler-UltraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('../assest/fonts/butler/Butler-Medium.woff2') format('woff2'),
+        url('../assest/fonts/butler/Butler-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('../assest/fonts/butler/Butler-Light.woff2') format('woff2'),
+        url('../assest/fonts/butler/Butler-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('../assest/fonts/butler/Butler-Black.woff2') format('woff2'),
+        url('../assest/fonts/butler/Butler-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('../assest/fonts/butler/Butler-Bold.woff2') format('woff2'),
+        url('../assest/fonts/butler/Butler-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('../assest/fonts/butler/Butler-ExtraBold.woff2') format('woff2'),
+        url('../assest/fonts/butler/Butler-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Butler';
+    src: url('../assest/fonts/butler/Butler.woff2') format('woff2'),
+        url('../assest/fonts/butler/Butler.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* roboto font */
+
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../assest/fonts/roboto/Roboto-Thin.woff2') format('woff2'),
+        url('../assest/fonts/roboto/Roboto-Thin.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../assest/fonts/roboto/Roboto-Medium.woff2') format('woff2'),
+        url('../assest/fonts/roboto/Roboto-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../assest/fonts/roboto/Roboto-Light.woff2') format('woff2'),
+        url('../assest/fonts/roboto/Roboto-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../assest/fonts/roboto/Roboto-Black.woff2') format('woff2'),
+        url('../assest/fonts/roboto/Roboto-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../assest/fonts/roboto/Roboto-Bold.woff2') format('woff2'),
+        url('../assest/fonts/roboto/Roboto-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../assest/fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+        url('../assest/fonts/roboto/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+

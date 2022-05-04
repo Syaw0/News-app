@@ -1,0 +1,74 @@
+.btn-ghost{
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--co3);
+    outline: none;
+    border: 1px solid var(--co3);
+    padding: 0.5rem 1rem;
+    font-family: "roboto";
+    font-weight: normal;
+    font-size: 0.85rem;
+    font-style: normal;
+    transition: all 0.3s;
+}
+
+.btn-ghost:hover{
+    transition: all 0.5s;
+    background-color: var(--co3);
+    color: var(--co1);
+}
+
+.btn-inline{
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--co3);
+    outline: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: "roboto";
+    font-weight: 300;
+    font-size: 0.85rem;
+    font-style: normal;
+    transition: all 0.3s;
+}
+
+.btn-inline-nav{
+padding: 0.6rem 1rem;
+
+}
+
+.btn-inline-nav:hover{
+    /* transition: all 1s; */
+/* border-bottom: 2px solid var(--co3); */
+font-weight: bold;
+}
+
+@media only screen and (max-width : 930px){
+    .btn-inline-nav{
+        padding: 0.6rem 0.7rem;
+        font-size: 0.79rem;
+        
+    }
+    .btn-inline-nav:first-child{
+        padding: 0.6rem 0.7rem 0.6rem 0rem;
+        
+    }
+}
+
+@media only screen and (max-width : 500px){
+    .btn-inline-nav{
+        padding: 0.6rem 0.7rem;
+        font-size: 0.69rem;
+        
+    }
+
+}
+
+@media only screen and (max-width : 300px){
+    .btn-inline-nav{
+        padding: 0.6rem 0.7rem;
+        font-size: 0.65rem;
+        
+    }
+
+}
