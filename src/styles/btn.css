@@ -59,8 +59,16 @@ font-weight: bold;
 
 .btn-raised:hover{
     transition: all 0.5s;
+    background-color: var(--co5t);
+    box-shadow: 0px 2px 11px 0px var(--co2);
+    
+    
+}
+.btn-raised:focus{
+    transition: all 0.5s;
     background-color: var(--co1);
     color: var(--co3);
+    box-shadow: 0px 2px 5px 0px var(--co3);
     
 }
 

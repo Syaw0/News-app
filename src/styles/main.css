@@ -2,10 +2,9 @@
 @import "./assest.css";
 @import "./btn.css";
 @import "./searchbox.css";
+@import "./home.css";
 
-:root{
-    --mainpad: 0.7rem 1.5rem ;
-}
+
 
 
 *{
@@ -21,8 +20,8 @@ body{
 #root{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: stretch;
 }
 
 
@@ -130,6 +129,7 @@ align-items: center;
 /* footer Section */
 
 #footer{
+    margin-top:100rem;
     padding: var(--mainpad) ;
     padding-top: 3rem;
     padding-bottom: 2rem;
@@ -184,7 +184,7 @@ align-items: center;
     margin-left: 0.5rem;
     transition: all 0.5s;
 }
-#footer-connect-btn:hover #footer-connect-btn-icon{
+#footer-connect-btn:focus #footer-connect-btn-icon{
     transition: all 0.6s;
     fill: var(--co3);
 }
@@ -253,7 +253,7 @@ align-items: center;
 
 }
 
-#footer-category-header{}
+/* #footer-category-header{} */
 
 /* support */
 
@@ -262,7 +262,7 @@ align-items: center;
 
 }
 
-#footer-support-header{}
+/* #footer-support-header{} */
 
 /* about us */
 
@@ -271,8 +271,8 @@ align-items: center;
 
 }
 
-#footer-aboutus-header{
-}
+/* #footer-aboutus-header{
+} */
 
 /* footer classes */
 
@@ -315,6 +315,19 @@ align-items: center;
     color: rgba(255,255,255,1);
 
 }
+
+/* main page container */
+
+/* #main-page-con{
+
+}
+
+.main-pages{
+
+} */
+
+/* Home */
+
 
 @media only screen and (max-width : 1000px){
 
@@ -391,6 +404,7 @@ align-items: center;
 
 
     #footer{
+        
         padding-top: 2rem;
         display: grid;
         grid-template-areas: none;
@@ -482,6 +496,7 @@ align-items: center;
         padding-left: 0rem;
         display: flex
     }
+
 
 }
 
@@ -589,3 +604,5 @@ align-items: center;
     /* footer secion */
 
 }
+
+

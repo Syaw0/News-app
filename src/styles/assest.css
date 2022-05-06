@@ -3,8 +3,12 @@
     --co2:#3b3b3b;
     --co3:#292525;
     --co4t:rgba(243, 246, 2480 , 0.7);
+    --co5t:rgba(59, 59, 59,0.5);
+    --co6t:rgba(243, 246, 2480 , 0.5);
     --wHeader:500;
     --wButton:"normal";
+    --mainpad: 0.7rem 1.5rem ;
+    --homepadbcon:1rem;
     
 }
 
