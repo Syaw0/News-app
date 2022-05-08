@@ -129,7 +129,7 @@ align-items: center;
 /* footer Section */
 
 #footer{
-    margin-top:100rem;
+    margin-top:2rem;
     padding: var(--mainpad) ;
     padding-top: 3rem;
     padding-bottom: 2rem;
