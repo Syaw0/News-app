@@ -163,6 +163,12 @@
     border: none;
 }
 
+
+#home-side div.side-news-with-img:last-child{
+    border-bottom: none;
+}
+
+
 #home-side-legend {
     display: none;
 }
