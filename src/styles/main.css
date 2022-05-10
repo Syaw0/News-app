@@ -4,7 +4,7 @@
 @import "./searchbox.css";
 @import "./home.css";
 @import "./newsDetail.css";
-
+@import "./newslist.css";
 * {
   padding: 0;
   margin: 0;
