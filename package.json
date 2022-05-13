@@ -16,6 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.17.5",
+    "@babel/plugin-transform-regenerator": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
@@ -34,5 +35,9 @@
   "bugs": {
     "url": "https://github.com/Syaw0/News-app/issues"
   },
-  "homepage": "https://github.com/Syaw0/News-app#readme"
+  "homepage": "https://github.com/Syaw0/News-app#readme",
+  "dependencies": {
+    "core-js": "^3.22.5",
+    "regenerator-runtime": "^0.13.9"
+  }
 }

@@ -1,214 +1,256 @@
-export function home (){
-    return homeDetail
+export function home(data) {
+  console.log(data);
+  let dataa = AllDetail(data);
+  return `${dataa}`;
 }
 
-
-const homeDetail = `<div id="home" class="main-pages">
-<div id="home-banner" class="home-sections">
-  <div id="home-banner-hwidth">
-    <div id="home-banner-hwidth-information">
-      <h3 id="home-banner-hwidth-information-header">
-        CF Montréal hosts Orlando unbeaten run to seven games
-      </h3>
-      <h5 id="home-banner-hwidth-information-description">
-        MONTREAL — CF Montréal extended its Major League Soccer unbeaten run to six games following a dramatic win over Atlanta United last week.
+function createBannerH(data) {
+  let detail = `<div id="home-banner-hwidth" >
+  <div id="home-banner-hwidth-information">
+    <h3 id="home-banner-hwidth-information-header">
+      ${data["top"]["withImg"][0]["title"]}
+    </h3>
+    <h5 id="home-banner-hwidth-information-description">
+    ${data["top"]["withImg"][0]["description"]}
+    </h5>
+    <h6 class="home-banner-hwidth-information-moredescription">
+    
+    </h6>
+    <h6 class="home-banner-hwidth-information-moredescription">
+      Recapping the Yankees" minor league affiliates" results from May 5th. Triple-A Scranton/Wilkes-Barre RailRiders: L
+    </h6>
+    <div id="home-banner-hwidth-information-date-con">
+      <h5 id="home-banner-hwidth-information-passtime">
+        <svg width="15" height="15" viewBox="0 0 15 15" id="home-banner-hwidth-information-passtime-icon" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M13.15 7.49998C13.15 4.66458 10.9402 1.84998 7.50002 1.84998C4.72167 1.84998 3.34849 3.9064 2.76335 5H4.5C4.77614 5 5 5.22386 5 5.5C5 5.77614 4.77614 6 4.5 6H1.5C1.22386 6 1 5.77614 1 5.5V2.5C1 2.22386 1.22386 2 1.5 2C1.77614 2 2 2.22386 2 2.5V4.31318C2.70453 3.07126 4.33406 0.849976 7.50002 0.849976C11.5628 0.849976 14.15 4.18537 14.15 7.49998C14.15 10.8146 11.5628 14.15 7.50002 14.15C5.55618 14.15 3.93778 13.3808 2.78548 12.2084C2.16852 11.5806 1.68668 10.839 1.35816 10.0407C1.25306 9.78536 1.37488 9.49315 1.63024 9.38806C1.8856 9.28296 2.17781 9.40478 2.2829 9.66014C2.56374 10.3425 2.97495 10.9745 3.4987 11.5074C4.47052 12.4963 5.83496 13.15 7.50002 13.15C10.9402 13.15 13.15 10.3354 13.15 7.49998ZM7.5 4.00001C7.77614 4.00001 8 4.22387 8 4.50001V7.29291L9.85355 9.14646C10.0488 9.34172 10.0488 9.65831 9.85355 9.85357C9.65829 10.0488 9.34171 10.0488 9.14645 9.85357L7.14645 7.85357C7.05268 7.7598 7 7.63262 7 7.50001V4.50001C7 4.22387 7.22386 4.00001 7.5 4.00001Z"
+            fill="currentColor"
+          />
+        </svg>
+        ${data["top"]["withImg"][0]["pubDate"]}
       </h5>
-      <h6 class="home-banner-hwidth-information-moredescription">
-        Recapping the Yankees" minor league affiliates" results from May 5th. Triple-A Scranton/Wilkes-Barre RailRiders: L
-      </h6>
-      <h6 class="home-banner-hwidth-information-moredescription">
-        Recapping the Yankees" minor league affiliates" results from May 5th. Triple-A Scranton/Wilkes-Barre RailRiders: L
-      </h6>
-      <div id="home-banner-hwidth-information-date-con">
-        <h5 id="home-banner-hwidth-information-passtime">
-          <svg width="15" height="15" viewBox="0 0 15 15" id="home-banner-hwidth-information-passtime-icon" xmlns="http://www.w3.org/2000/svg">
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M13.15 7.49998C13.15 4.66458 10.9402 1.84998 7.50002 1.84998C4.72167 1.84998 3.34849 3.9064 2.76335 5H4.5C4.77614 5 5 5.22386 5 5.5C5 5.77614 4.77614 6 4.5 6H1.5C1.22386 6 1 5.77614 1 5.5V2.5C1 2.22386 1.22386 2 1.5 2C1.77614 2 2 2.22386 2 2.5V4.31318C2.70453 3.07126 4.33406 0.849976 7.50002 0.849976C11.5628 0.849976 14.15 4.18537 14.15 7.49998C14.15 10.8146 11.5628 14.15 7.50002 14.15C5.55618 14.15 3.93778 13.3808 2.78548 12.2084C2.16852 11.5806 1.68668 10.839 1.35816 10.0407C1.25306 9.78536 1.37488 9.49315 1.63024 9.38806C1.8856 9.28296 2.17781 9.40478 2.2829 9.66014C2.56374 10.3425 2.97495 10.9745 3.4987 11.5074C4.47052 12.4963 5.83496 13.15 7.50002 13.15C10.9402 13.15 13.15 10.3354 13.15 7.49998ZM7.5 4.00001C7.77614 4.00001 8 4.22387 8 4.50001V7.29291L9.85355 9.14646C10.0488 9.34172 10.0488 9.65831 9.85355 9.85357C9.65829 10.0488 9.34171 10.0488 9.14645 9.85357L7.14645 7.85357C7.05268 7.7598 7 7.63262 7 7.50001V4.50001C7 4.22387 7.22386 4.00001 7.5 4.00001Z"
-              fill="currentColor"
-            />
-          </svg>
-          13h
-        </h5>
 
-        <h5 id="home-banner-hwidth-information-date">
-          2022-05-06 11:00:00
-        </h5>
-      </div>
-    </div>
-
-    <div id="home-banner-hwidth-img">
-      <img src="https://static.sportskeeda.com/editor/2022/05/05265-16518403424595-1920.jpg" alt="banner-img" />
+      <h5 id="home-banner-hwidth-information-date">
+      ${data["top"]["withImg"][0]["pubDate"]}
+      </h5>
     </div>
   </div>
 
+  <div id="home-banner-hwidth-img">
+    <img src="${data["top"]["withImg"][0]["image_url"]}" alt="banner-img" />
+  </div>
+</div>`;
+
+  return detail;
+}
+
+function createBannerL(data) {
+  let detail = `
   <div id="home-banner-lwidth">
-    <h4 id="home-banner-header">Latest News</h4>
+  <h4 id="home-banner-header">Latest News</h4>
 
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <!-- Slides -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <!-- Slides -->
 
-        <div class="swiper-slide">
-          <img src="https://static.sportskeeda.com/editor/2022/05/05265-16518403424595-1920.jpg" alt="" class="swiper-lazy" />
-          <div class="swiper-lazy-preloader"></div>
-          <div class="swiper-slide-informaion">
-            <h2 class="swiper-slide-informaion-header">
-              CF Montréal hosts Orlando unbeaten run to seven games
-            </h2>
+      <div class="swiper-slide">
+        <img src="${data["top"]["withImg"][1]["image_url"]}" alt="" class="swiper-lazy" />
+        <div class="swiper-lazy-preloader"></div>
+        <div class="swiper-slide-informaion">
+          <h2 class="swiper-slide-informaion-header">
+          ${data["top"]["withImg"][1]["title"]}
+          </h2>
 
-            <h6 class="swiper-slide-informaion-date">
-              2022-05-06 11:00:00
-            </h6>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <img src="https://static.sportskeeda.com/editor/2022/05/cca5e-16518587928553-1920.jpg" alt="" class="swiper-lazy" />
-          <div class="swiper-lazy-preloader"></div>
-          <div class="swiper-slide-informaion">
-            <h2 class="swiper-slide-informaion-header">
-              CF Montréal hosts Orlando unbeaten run to seven games
-            </h2>
-
-            <h6 class="swiper-slide-informaion-date">
-              2022-05-06 11:00:00
-            </h6>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <img src="https://static.sportskeeda.com/editor/2022/05/fec4d-16518581614341-1920.jpg" alt="" class="swiper-lazy" />
-          <div class="swiper-lazy-preloader"></div>
-          <div class="swiper-slide-informaion">
-            <h2 class="swiper-slide-informaion-header">
-              CF Montréal hosts Orlando unbeaten run to seven games
-            </h2>
-
-            <h6 class="swiper-slide-informaion-date">
-              2022-05-06 11:00:00
-            </h6>
-          </div>
+          <h6 class="swiper-slide-informaion-date">
+          ${data["top"]["withImg"][1]["pubDate"]}
+          </h6>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
+
+      <div class="swiper-slide">
+        <img src="${data["top"]["withImg"][2]["image_url"]}" alt="" class="swiper-lazy" />
+        <div class="swiper-lazy-preloader"></div>
+        <div class="swiper-slide-informaion">
+          <h2 class="swiper-slide-informaion-header">
+          ${data["top"]["withImg"][2]["title"]}
+          </h2>
+
+          <h6 class="swiper-slide-informaion-date">
+            ${data["top"]["withImg"][2]["pubDate"]}
+          </h6>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="${data["top"]["withImg"][3]["image_url"]}" alt="" class="swiper-lazy" />
+        <div class="swiper-lazy-preloader"></div>
+        <div class="swiper-slide-informaion">
+          <h2 class="swiper-slide-informaion-header">
+          ${data["top"]["withImg"][3]["title"]}
+          </h2>
+
+          <h6 class="swiper-slide-informaion-date">
+          ${data["top"]["withImg"][3]["pubDate"]}
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+ </div>`;
+
+  return detail;
+}
+
+function createNewsFeed1(data) {
+  let detail = `
+  <fieldset id="home-newsfeed-con" class="home-sections">
+  <legend id="home-newsfeed-legend" class="home-sections-legends">
+    <h4>News Feed</h4>
+  </legend>
+
+  <button id="home-newsfeed-btn" class="btn-inline home-news-seeall-btn">
+    SEE ALL
+    <svg width="15" height="15" viewBox="0 0 15 15" id="home-newsfeed-btn-icon" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M2.14645 11.1464C1.95118 11.3417 1.95118 11.6583 2.14645 11.8536C2.34171 12.0488 2.65829 12.0488 2.85355 11.8536L6.85355 7.85355C7.04882 7.65829 7.04882 7.34171 6.85355 7.14645L2.85355 3.14645C2.65829 2.95118 2.34171 2.95118 2.14645 3.14645C1.95118 3.34171 1.95118 3.65829 2.14645 3.85355L5.79289 7.5L2.14645 11.1464ZM8.14645 11.1464C7.95118 11.3417 7.95118 11.6583 8.14645 11.8536C8.34171 12.0488 8.65829 12.0488 8.85355 11.8536L12.8536 7.85355C13.0488 7.65829 13.0488 7.34171 12.8536 7.14645L8.85355 3.14645C8.65829 2.95118 8.34171 2.95118 8.14645 3.14645C7.95118 3.34171 7.95118 3.65829 8.14645 3.85355L11.7929 7.5L8.14645 11.1464Z"
+      />
+    </svg>
+  </button>
+
+  <div id="home-newsfeed-news-con">
+    <div class="news-card-vertical">
+      <div class="news-card-vertical-img-con">
+        <img src="${data["top"]["withImg"][5]["image_url"]}" alt="" />
+      </div>
+      <div class="news-card-vertical-information">
+        <h4 class="news-card-vertical-information-title">
+        ${data["top"]["withImg"][5]["title"]}
+        </h4>
+
+        <h6 class="news-card-vertical-information-description">
+        ${data["top"]["withImg"][5]["description"]}
+        </h6>
+
+        <h6 class="news-card-vertical-information-date">
+        ${data["top"]["withImg"][5]["pubDate"]}
+        </h6>
+      </div>
+    </div>
+    <div class="news-card-vertical">
+      <div class="news-card-vertical-img-con">
+        <img src="${data["top"]["withImg"][6]["image_url"]}" alt="" />
+      </div>
+      <div class="news-card-vertical-information">
+        <h4 class="news-card-vertical-information-title">
+        ${data["top"]["withImg"][6]["title"]}
+        </h4>
+
+        <h6 class="news-card-vertical-information-description">
+        ${data["top"]["withImg"][6]["description"]}
+        </h6>
+
+        <h6 class="news-card-vertical-information-date">
+        ${data["top"]["withImg"][6]["pubDate"]}
+        </h6>
+      </div>
+    </div>
+    <div class="news-card-vertical">
+      <div class="news-card-vertical-img-con">
+        <img src="${data["top"]["withImg"][7]["image_url"]}" alt="" />
+      </div>
+      <div class="news-card-vertical-information">
+        <h4 class="news-card-vertical-information-title">
+        ${data["top"]["withImg"][7]["title"]}
+        </h4>
+
+        <h6 class="news-card-vertical-information-description">
+        ${data["top"]["withImg"][7]["description"]}
+        </h6>
+
+        <h6 class="news-card-vertical-information-date">
+        ${data["top"]["withImg"][7]["pubDate"]}
+        </h6>
+      </div>
+    </div>
+    <div class="news-card-vertical">
+      <div class="news-card-vertical-img-con">
+        <img src="${data["top"]["withImg"][8]["image_url"]}" alt="" />
+      </div>
+      <div class="news-card-vertical-information">
+        <h4 class="news-card-vertical-information-title">
+        ${data["top"]["withImg"][8]["title"]}
+        </h4>
+
+        <h6 class="news-card-vertical-information-description">
+        ${data["top"]["withImg"][8]["description"]}
+        </h6>
+        
+        <h6 class="news-card-vertical-information-date">
+        ${data["top"]["withImg"][8]["pubDate"]}
+        </h6>
+      </div>
     </div>
   </div>
-</div>
+</fieldset>`;
 
-<fieldset id="home-side" class="home-sections side-topnew">
+  return detail;
+}
+
+function createSide(data) {
+  let withoutImg = "";
+  let withImg = "";
+  let element;
+  let element2;
+  for (let num = 0; num != 10; num++) {
+    element = `
+    <div class="side-news-without-img">
+    <h6 class="side-news-without-img-category">
+    ${data["top"]["withoutImg"][num]["category"][0]}
+    </h6>
+    <h6 class="side-news-without-img-date">
+    ${data["top"]["withoutImg"][num]["pubDate"]}
+    </h6>
+    <h4 class="side-news-without-img-title">
+    ${data["top"]["withoutImg"][num]["title"]}
+    </h4>
+  </div>
+  `;
+    withoutImg += element;
+  }
+
+  for (let num = 9; num != 14; num++) {
+    element2 = `
+    <div class="side-news-with-img">
+    <div class="side-news-with-img-imgcon">
+      <img src="${data["top"]["withImg"][num]["image_url"]}" alt="" />
+    </div>
+
+    <div class="side-news-with-img-infos">
+      <h6 class="side-news-with-img-infos-date">
+      ${data["top"]["withImg"][num]["pubDate"]}
+      </h6>
+
+      <h4 class="side-news-with-img-infos-title">
+      ${data["top"]["withImg"][num]["title"]}
+      </h4>
+    </div>
+  </div>
+  `;
+    withImg += element2;
+  }
+
+  let detail = ` 
+  <fieldset id="home-side" class="home-sections side-topnew">
   <legend id="home-side-legend" class="home-sections-legends">Top News</legend>
   <h3 id="home-side-header">Top News</h3>
 
-  <div class="side-news-without-img">
-    <h6 class="side-news-without-img-category">
-      Sport
-    </h6>
-    <h6 class="side-news-without-img-date">
-      2022-05-06 11:00:00
-    </h6>
-    <h4 class="side-news-without-img-title">
-      Big E provides major health update
-    </h4>
-  </div>
-  <div class="side-news-without-img">
-    <h6 class="side-news-without-img-category">
-      Sport
-    </h6>
-    <h6 class="side-news-without-img-date">
-      2022-05-06 11:00:00
-    </h6>
-    <h4 class="side-news-without-img-title">
-      Big E provides major health update
-    </h4>
-  </div>
-  <div class="side-news-without-img">
-    <h6 class="side-news-without-img-category">
-      Sport
-    </h6>
-    <h6 class="side-news-without-img-date">
-      2022-05-06 11:00:00
-    </h6>
-    <h4 class="side-news-without-img-title">
-      Big E provides major health update
-    </h4>
-  </div>
-  <div class="side-news-without-img">
-    <h6 class="side-news-without-img-category">
-      Sport
-    </h6>
-    <h6 class="side-news-without-img-date">
-      2022-05-06 11:00:00
-    </h6>
-    <h4 class="side-news-without-img-title">
-      Big E provides major health update
-    </h4>
-  </div>
-  <div class="side-news-without-img">
-    <h6 class="side-news-without-img-category">
-      Sport
-    </h6>
-    <h6 class="side-news-without-img-date">
-      2022-05-06 11:00:00
-    </h6>
-    <h4 class="side-news-without-img-title">
-      Big E provides major health update
-    </h4>
-  </div>
-  <div class="side-news-without-img">
-    <h6 class="side-news-without-img-category">
-      Sport
-    </h6>
-    <h6 class="side-news-without-img-date">
-      2022-05-06 11:00:00
-    </h6>
-    <h4 class="side-news-without-img-title">
-      Big E provides major health update
-    </h4>
-  </div>
-  <div class="side-news-without-img">
-    <h6 class="side-news-without-img-category">
-      Sport
-    </h6>
-    <h6 class="side-news-without-img-date">
-      2022-05-06 11:00:00
-    </h6>
-    <h4 class="side-news-without-img-title">
-      Big E provides major health update
-    </h4>
-  </div>
-  <div class="side-news-without-img">
-    <h6 class="side-news-without-img-category">
-      Sport
-    </h6>
-    <h6 class="side-news-without-img-date">
-      2022-05-06 11:00:00
-    </h6>
-    <h4 class="side-news-without-img-title">
-      Big E provides major health update
-    </h4>
-  </div>
-  <div class="side-news-without-img">
-    <h6 class="side-news-without-img-category">
-      Sport
-    </h6>
-    <h6 class="side-news-without-img-date">
-      2022-05-06 11:00:00
-    </h6>
-    <h4 class="side-news-without-img-title">
-      Big E provides major health update
-    </h4>
-  </div>
-  <div class="side-news-without-img">
-    <h6 class="side-news-without-img-category">
-      Sport
-    </h6>
-    <h6 class="side-news-without-img-date">
-      2022-05-06 11:00:00
-    </h6>
-    <h4 class="side-news-without-img-title">
-      Big E provides major health update
-    </h4>
-  </div>
+  ${withoutImg}
+  
 
   <!-- side connect icons -->
 
@@ -255,191 +297,42 @@ const homeDetail = `<div id="home" class="main-pages">
 
   <!-- side news with img -->
 
-  <div class="side-news-with-img">
-    <div class="side-news-with-img-imgcon">
-      <img src="https://static.sportskeeda.com/editor/2022/05/05265-16518403424595-1920.jpg" alt="" />
-    </div>
+  ${withImg}
 
-    <div class="side-news-with-img-infos">
-      <h6 class="side-news-with-img-infos-date">
-        2022-05-06 11:00:00
-      </h6>
+</fieldset>`;
 
-      <h4 class="side-news-with-img-infos-title">
-        Man dies in Talladega shooting, suspect sought
-      </h4>
-    </div>
-  </div>
-  <div class="side-news-with-img">
-    <div class="side-news-with-img-imgcon">
-      <img src="https://static.sportskeeda.com/editor/2022/05/05265-16518403424595-1920.jpg" alt="" />
-    </div>
+  return detail;
+}
 
-    <div class="side-news-with-img-infos">
-      <h6 class="side-news-with-img-infos-date">
-        2022-05-06 11:00:00
-      </h6>
+function createSport(data) {
+  let withImg = "";
+  let element;
+  for (let num = 1; num != 7; num++) {
+    element = `
+  <div class="news-card-vertical">
+        <div class="news-card-vertical-img-con">
+          <img src="${data["sport"][num]["image_url"]}" alt="" />
+        </div>
+        <div class="news-card-vertical-information">
+          <h4 class="news-card-vertical-information-title">
+          ${data["sport"][num]["title"]}
+          </h4>
 
-      <h4 class="side-news-with-img-infos-title">
-        Man dies in Talladega shooting, suspect sought
-      </h4>
-    </div>
-  </div>
-  <div class="side-news-with-img">
-    <div class="side-news-with-img-imgcon">
-      <img src="https://static.sportskeeda.com/editor/2022/05/05265-16518403424595-1920.jpg" alt="" />
-    </div>
+          <h6 class="news-card-vertical-information-description">
+          ${data["sport"][num]["description"]}
+          </h6>
 
-    <div class="side-news-with-img-infos">
-      <h6 class="side-news-with-img-infos-date">
-        2022-05-06 11:00:00
-      </h6>
-
-      <h4 class="side-news-with-img-infos-title">
-        Man dies in Talladega shooting, suspect sought
-      </h4>
-    </div>
-  </div>
-  <div class="side-news-with-img">
-    <div class="side-news-with-img-imgcon">
-      <img src="https://static.sportskeeda.com/editor/2022/05/05265-16518403424595-1920.jpg" alt="" />
-    </div>
-
-    <div class="side-news-with-img-infos">
-      <h6 class="side-news-with-img-infos-date">
-        2022-05-06 11:00:00
-      </h6>
-
-      <h4 class="side-news-with-img-infos-title">
-        Man dies in Talladega shooting, suspect sought
-      </h4>
-    </div>
-  </div>
-  <div class="side-news-with-img">
-    <div class="side-news-with-img-imgcon">
-      <img src="https://static.sportskeeda.com/editor/2022/05/05265-16518403424595-1920.jpg" alt="" />
-    </div>
-
-    <div class="side-news-with-img-infos">
-      <h6 class="side-news-with-img-infos-date">
-        2022-05-06 11:00:00
-      </h6>
-
-      <h4 class="side-news-with-img-infos-title">
-        Man dies in Talladega shooting, suspect sought
-      </h4>
-    </div>
-  </div>
-  <div class="side-news-with-img">
-    <div class="side-news-with-img-imgcon">
-      <img src="https://static.sportskeeda.com/editor/2022/05/05265-16518403424595-1920.jpg" alt="" />
-    </div>
-
-    <div class="side-news-with-img-infos">
-      <h6 class="side-news-with-img-infos-date">
-        2022-05-06 11:00:00
-      </h6>
-
-      <h4 class="side-news-with-img-infos-title">
-        Man dies in Talladega shooting, suspect sought
-      </h4>
-    </div>
-  </div>
-</fieldset>
-
-<fieldset id="home-newsfeed-con" class="home-sections">
-  <legend id="home-newsfeed-legend" class="home-sections-legends">
-    <h4>News Feed</h4>
-  </legend>
-
-  <button id="home-newsfeed-btn" class="btn-inline home-news-seeall-btn">
-    SEE ALL
-    <svg width="15" height="15" viewBox="0 0 15 15" id="home-newsfeed-btn-icon" xmlns="http://www.w3.org/2000/svg">
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M2.14645 11.1464C1.95118 11.3417 1.95118 11.6583 2.14645 11.8536C2.34171 12.0488 2.65829 12.0488 2.85355 11.8536L6.85355 7.85355C7.04882 7.65829 7.04882 7.34171 6.85355 7.14645L2.85355 3.14645C2.65829 2.95118 2.34171 2.95118 2.14645 3.14645C1.95118 3.34171 1.95118 3.65829 2.14645 3.85355L5.79289 7.5L2.14645 11.1464ZM8.14645 11.1464C7.95118 11.3417 7.95118 11.6583 8.14645 11.8536C8.34171 12.0488 8.65829 12.0488 8.85355 11.8536L12.8536 7.85355C13.0488 7.65829 13.0488 7.34171 12.8536 7.14645L8.85355 3.14645C8.65829 2.95118 8.34171 2.95118 8.14645 3.14645C7.95118 3.34171 7.95118 3.65829 8.14645 3.85355L11.7929 7.5L8.14645 11.1464Z"
-      />
-    </svg>
-  </button>
-
-  <div id="home-newsfeed-news-con">
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
+          <h6 class="news-card-vertical-information-date">
+          ${data["sport"][num]["pubDate"]}
+          </h6>
+        </div>
       </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
+  `;
+    withImg += element;
+  }
 
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-  </div>
-</fieldset>
-
-<fieldset id="home-sportsnews-con" class="home-sections">
+  let detail = ` 
+  <fieldset id="home-sportsnews-con" class="home-sections">
   <legend id="home-sportsnews-legend" class="home-sections-legends">
     <h4>Sports Feed</h4>
   </legend>
@@ -457,249 +350,133 @@ const homeDetail = `<div id="home" class="main-pages">
 
   <div id="home-sportsnews-news-con">
     <div id="home-sportsnews-img-con">
-      <img src="https://static.sportskeeda.com/editor/2022/05/05265-16518403424595-1920.jpg" alt="" />
+      <img src="${data["sport"][0]["image_url"]}" alt="" />
       <div id="home-sportsnews-img-information" class="news-card-vertical bottomdetail">
         <div class="news-card-vertical-information">
           <h4 class="news-card-vertical-information-title">
-            Jujutsu Kaisen/7-11 Collab Offers Wild New Art
+          ${data["sport"][0]["title"]}
           </h4>
 
           <h6 class="news-card-vertical-information-description">
-            Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
+          ${data["sport"][0]["description"]}
           </h6>
 
           <h6 class="news-card-vertical-information-date">
-            2022-05-07 20:59:00
+          ${data["sport"][0]["pubDate"]}
           </h6>
         </div>
       </div>
     </div>
     <div id="home-sportsnews-news">
-      <div class="news-card-vertical">
-        <div class="news-card-vertical-img-con">
-          <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-        </div>
-        <div class="news-card-vertical-information">
-          <h4 class="news-card-vertical-information-title">
-            Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-          </h4>
-
-          <h6 class="news-card-vertical-information-description">
-            Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-          </h6>
-
-          <h6 class="news-card-vertical-information-date">
-            2022-05-07 20:59:00
-          </h6>
-        </div>
-      </div>
-      <div class="news-card-vertical">
-        <div class="news-card-vertical-img-con">
-          <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-        </div>
-        <div class="news-card-vertical-information">
-          <h4 class="news-card-vertical-information-title">
-            Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-          </h4>
-
-          <h6 class="news-card-vertical-information-description">
-            Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-          </h6>
-
-          <h6 class="news-card-vertical-information-date">
-            2022-05-07 20:59:00
-          </h6>
-        </div>
-      </div>
-      <div class="news-card-vertical">
-        <div class="news-card-vertical-img-con">
-          <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-        </div>
-        <div class="news-card-vertical-information">
-          <h4 class="news-card-vertical-information-title">
-            Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-          </h4>
-
-          <h6 class="news-card-vertical-information-description">
-            Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-          </h6>
-
-          <h6 class="news-card-vertical-information-date">
-            2022-05-07 20:59:00
-          </h6>
-        </div>
-      </div>
-      <div class="news-card-vertical">
-        <div class="news-card-vertical-img-con">
-          <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-        </div>
-        <div class="news-card-vertical-information">
-          <h4 class="news-card-vertical-information-title">
-            Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-          </h4>
-
-          <h6 class="news-card-vertical-information-description">
-            Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-          </h6>
-
-          <h6 class="news-card-vertical-information-date">
-            2022-05-07 20:59:00
-          </h6>
-        </div>
-      </div>
-      <div class="news-card-vertical">
-        <div class="news-card-vertical-img-con">
-          <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-        </div>
-        <div class="news-card-vertical-information">
-          <h4 class="news-card-vertical-information-title">
-            Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-          </h4>
-
-          <h6 class="news-card-vertical-information-description">
-            Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-          </h6>
-
-          <h6 class="news-card-vertical-information-date">
-            2022-05-07 20:59:00
-          </h6>
-        </div>
-      </div>
-      <div class="news-card-vertical">
-        <div class="news-card-vertical-img-con">
-          <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-        </div>
-        <div class="news-card-vertical-information">
-          <h4 class="news-card-vertical-information-title">
-            Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-          </h4>
-
-          <h6 class="news-card-vertical-information-description">
-            Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-          </h6>
-
-          <h6 class="news-card-vertical-information-date">
-            2022-05-07 20:59:00
-          </h6>
-        </div>
-      </div>
+    ${withImg}
     </div>
   </div>
 </fieldset>
+`;
 
-<fieldset id="home-watchnow-news" class="home-sections">
-  <legend class="home-sections-legends" id="home-watchnow-legend">
-    Watch Now
-  </legend>
-  <button id="home-watchnow-btn" class="btn-inline home-news-seeall-btn">
-    SEE ALL
-    <svg width="15" height="15" viewBox="0 0 15 15" id="home-watchnow-btn-icon" xmlns="http://www.w3.org/2000/svg">
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M2.14645 11.1464C1.95118 11.3417 1.95118 11.6583 2.14645 11.8536C2.34171 12.0488 2.65829 12.0488 2.85355 11.8536L6.85355 7.85355C7.04882 7.65829 7.04882 7.34171 6.85355 7.14645L2.85355 3.14645C2.65829 2.95118 2.34171 2.95118 2.14645 3.14645C1.95118 3.34171 1.95118 3.65829 2.14645 3.85355L5.79289 7.5L2.14645 11.1464ZM8.14645 11.1464C7.95118 11.3417 7.95118 11.6583 8.14645 11.8536C8.34171 12.0488 8.65829 12.0488 8.85355 11.8536L12.8536 7.85355C13.0488 7.65829 13.0488 7.34171 12.8536 7.14645L8.85355 3.14645C8.65829 2.95118 8.34171 2.95118 8.14645 3.14645C7.95118 3.34171 7.95118 3.65829 8.14645 3.85355L11.7929 7.5L8.14645 11.1464Z"
-      />
-    </svg>
-  </button>
+  return detail;
+}
 
-  <div class="news-card-vertical" id="home-watchnow-toprow">
+function createWorld(data) {
+  let withImg = "";
+  let element;
+  for (let num = 1; num != 5; num++) {
+    element = `
+    <div class="news-card-vertical">
     <div class="news-card-vertical-img-con">
-      <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
+      <img src="${data["world"][num]["image_url"]}" alt="" />
     </div>
     <div class="news-card-vertical-information">
       <h4 class="news-card-vertical-information-title">
-        Jujutsu Kaisen/7-11 Collab Offers Wild New Art
+      ${data["world"][num]["title"]}
       </h4>
 
       <h6 class="news-card-vertical-information-description">
-        Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
+      ${data["world"][num]["description"]}
       </h6>
 
       <h6 class="news-card-vertical-information-date">
-        2022-05-07 20:59:00
+      ${data["world"][num]["pubDate"]}
       </h6>
     </div>
   </div>
+  `;
+    withImg += element;
+  }
 
-  <div id="home-watchnow-bottomrow">
-    <div class="news-card-vertical">
+  let detail = ` 
+  <fieldset id="home-watchnow-news" class="home-sections">
+    <legend class="home-sections-legends" id="home-watchnow-legend">
+      World News
+    </legend>
+    <button id="home-watchnow-btn" class="btn-inline home-news-seeall-btn">
+      SEE ALL
+      <svg width="15" height="15" viewBox="0 0 15 15" id="home-watchnow-btn-icon" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M2.14645 11.1464C1.95118 11.3417 1.95118 11.6583 2.14645 11.8536C2.34171 12.0488 2.65829 12.0488 2.85355 11.8536L6.85355 7.85355C7.04882 7.65829 7.04882 7.34171 6.85355 7.14645L2.85355 3.14645C2.65829 2.95118 2.34171 2.95118 2.14645 3.14645C1.95118 3.34171 1.95118 3.65829 2.14645 3.85355L5.79289 7.5L2.14645 11.1464ZM8.14645 11.1464C7.95118 11.3417 7.95118 11.6583 8.14645 11.8536C8.34171 12.0488 8.65829 12.0488 8.85355 11.8536L12.8536 7.85355C13.0488 7.65829 13.0488 7.34171 12.8536 7.14645L8.85355 3.14645C8.65829 2.95118 8.34171 2.95118 8.14645 3.14645C7.95118 3.34171 7.95118 3.65829 8.14645 3.85355L11.7929 7.5L8.14645 11.1464Z"
+        />
+      </svg>
+    </button>
+  
+    <div class="news-card-vertical" id="home-watchnow-toprow">
       <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
+        <img src="${data["world"][0]["image_url"]}" alt="" />
       </div>
       <div class="news-card-vertical-information">
         <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
+        ${data["world"][0]["title"]}
         </h4>
-
+  
         <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
+        ${data["world"][0]["description"]}
         </h6>
-
+  
         <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
+        ${data["world"][0]["pubDate"]}
         </h6>
       </div>
     </div>
+  
+    <div id="home-watchnow-bottomrow">
+    ${withImg}
+      </div>
+    
+  </fieldset>`;
+
+  return detail;
+}
+
+function createNewsFeed2(data) {
+  let withImg = "";
+  let element;
+  for (let num = 14; num != 19; num++) {
+    element = `
     <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
+    <div class="news-card-vertical-img-con">
+      <img src="${data["top"]["withImg"][num]["image_url"]}" alt="" />
     </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
+    <div class="news-card-vertical-information">
+      <h4 class="news-card-vertical-information-title">
+      ${data["top"]["withImg"][num]["title"]}
+      </h4>
 
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
+      <h6 class="news-card-vertical-information-description">
+      ${data["top"]["withImg"][num]["description"]}
+      </h6>
 
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
+      <h6 class="news-card-vertical-information-date">
+      ${data["top"]["withImg"][num]["pubDate"]}
+      </h6>
     </div>
   </div>
-</fieldset>
+  `;
+    withImg += element;
+  }
 
-<!-- news feed 2 -->
-
-<fieldset id="home-newsfeed2-con" class="home-sections">
+  let detail = `  
+  <fieldset id="home-newsfeed2-con" class="home-sections">
   <legend id="home-newsfeed-legend" class="home-sections-legends">
     <h4>News Feed</h4>
   </legend>
@@ -716,212 +493,46 @@ const homeDetail = `<div id="home" class="main-pages">
   </button>
 
   <div id="home-newsfeed-news-con " class="home-newsfeed2-news-con">
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
+  ${withImg}
     </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-  </div>
 </fieldset>
+`;
+  return detail;
+}
 
-<fieldset id="home-watchnow-news" class="home-sections">
-  <legend class="home-sections-legends" id="home-watchnow-legend">
-    Watch Now
-  </legend>
-  <button id="home-watchnow-btn" class="btn-inline home-news-seeall-btn">
-    SEE ALL
-    <svg width="15" height="15" viewBox="0 0 15 15" id="home-watchnow-btn-icon" xmlns="http://www.w3.org/2000/svg">
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M2.14645 11.1464C1.95118 11.3417 1.95118 11.6583 2.14645 11.8536C2.34171 12.0488 2.65829 12.0488 2.85355 11.8536L6.85355 7.85355C7.04882 7.65829 7.04882 7.34171 6.85355 7.14645L2.85355 3.14645C2.65829 2.95118 2.34171 2.95118 2.14645 3.14645C1.95118 3.34171 1.95118 3.65829 2.14645 3.85355L5.79289 7.5L2.14645 11.1464ZM8.14645 11.1464C7.95118 11.3417 7.95118 11.6583 8.14645 11.8536C8.34171 12.0488 8.65829 12.0488 8.85355 11.8536L12.8536 7.85355C13.0488 7.65829 13.0488 7.34171 12.8536 7.14645L8.85355 3.14645C8.65829 2.95118 8.34171 2.95118 8.14645 3.14645C7.95118 3.34171 7.95118 3.65829 8.14645 3.85355L11.7929 7.5L8.14645 11.1464Z"
-      />
-    </svg>
-  </button>
-
-  <div class="news-card-vertical" id="home-watchnow-toprow">
-    <div class="news-card-vertical-img-con">
-      <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-    </div>
-    <div class="news-card-vertical-information">
-      <h4 class="news-card-vertical-information-title">
-        Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-      </h4>
-
-      <h6 class="news-card-vertical-information-description">
-        Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-      </h6>
-
-      <h6 class="news-card-vertical-information-date">
-        2022-05-07 20:59:00
-      </h6>
-    </div>
+function createReadmore(data) {
+  let withImg = "";
+  let element;
+  for (let num = 20; num != 26; num++) {
+    element = `
+  <div class="news-card-vertical">
+  <div class="news-card-vertical-img-con">
+    <img src="${data["top"]["withImg"][num]["image_url"]}" alt="" />
   </div>
+  <div class="news-card-vertical-information">
+    <h6 class="side-news-without-img-category">
+    ${data["top"]["withImg"][num]["category"]}
+    </h6>
 
-  <div id="home-watchnow-bottomrow">
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
+    <h4 class="news-card-vertical-information-title">
+    ${data["top"]["withImg"][num]["title"]}
+    </h4>
 
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
+    <h6 class="news-card-vertical-information-description">
+    ${data["top"]["withImg"][num]["description"]}
+    </h6>
 
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-          Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-          Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-          2022-05-07 20:59:00
-        </h6>
-      </div>
-    </div>
+    <h6 class="news-card-vertical-information-date">
+    ${data["top"]["withImg"][num]["pubDate"]}
+    </h6>
   </div>
-</fieldset>
+</div>
+  `;
+    withImg += element;
+  }
 
-<!-- read more -->
-
-<fieldset id="home-readmore-con" class="home-sections">
+  let detail = `
+  <fieldset id="home-readmore-con" class="home-sections">
   <legend class="home-sections-legends" id="home-readmore-legend">
     Read More
   </legend>
@@ -935,137 +546,28 @@ const homeDetail = `<div id="home" class="main-pages">
       />
     </svg>
   </button>
-  <div class="news-card-vertical">
-    <div class="news-card-vertical-img-con">
-      <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-    </div>
-    <div class="news-card-vertical-information">
-      <h6 class="side-news-without-img-category">
-        Sport
-      </h6>
-
-      <h4 class="news-card-vertical-information-title">
-        Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-      </h4>
-
-      <h6 class="news-card-vertical-information-description">
-        Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-      </h6>
-
-      <h6 class="news-card-vertical-information-date">
-        2022-05-07 20:59:00
-      </h6>
-    </div>
-  </div>
-  <div class="news-card-vertical">
-    <div class="news-card-vertical-img-con">
-      <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-    </div>
-    <div class="news-card-vertical-information">
-      <h6 class="side-news-without-img-category">
-        Sport
-      </h6>
-
-      <h4 class="news-card-vertical-information-title">
-        Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-      </h4>
-
-      <h6 class="news-card-vertical-information-description">
-        Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-      </h6>
-
-      <h6 class="news-card-vertical-information-date">
-        2022-05-07 20:59:00
-      </h6>
-    </div>
-  </div>
-  <div class="news-card-vertical">
-    <div class="news-card-vertical-img-con">
-      <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-    </div>
-    <div class="news-card-vertical-information">
-      <h6 class="side-news-without-img-category">
-        Sport
-      </h6>
-
-      <h4 class="news-card-vertical-information-title">
-        Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-      </h4>
-
-      <h6 class="news-card-vertical-information-description">
-        Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-      </h6>
-
-      <h6 class="news-card-vertical-information-date">
-        2022-05-07 20:59:00
-      </h6>
-    </div>
-  </div>
-  <div class="news-card-vertical">
-    <div class="news-card-vertical-img-con">
-      <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-    </div>
-    <div class="news-card-vertical-information">
-      <h6 class="side-news-without-img-category">
-        Sport
-      </h6>
-
-      <h4 class="news-card-vertical-information-title">
-        Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-      </h4>
-
-      <h6 class="news-card-vertical-information-description">
-        Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-      </h6>
-
-      <h6 class="news-card-vertical-information-date">
-        2022-05-07 20:59:00
-      </h6>
-    </div>
-  </div>
-  <div class="news-card-vertical">
-    <div class="news-card-vertical-img-con">
-      <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-    </div>
-    <div class="news-card-vertical-information">
-      <h6 class="side-news-without-img-category">
-        Sport
-      </h6>
-
-      <h4 class="news-card-vertical-information-title">
-        Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-      </h4>
-
-      <h6 class="news-card-vertical-information-description">
-        Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-      </h6>
-
-      <h6 class="news-card-vertical-information-date">
-        2022-05-07 20:59:00
-      </h6>
-    </div>
-  </div>
-  <div class="news-card-vertical">
-    <div class="news-card-vertical-img-con">
-      <img src="https://sportshub.cbsistatic.com/i/2022/05/07/16949311-976e-4131-a832-95f52b97cca4/jujutsu-kaisen.jpg" alt="" />
-    </div>
-    <div class="news-card-vertical-information">
-      <h6 class="side-news-without-img-category">
-        Sport
-      </h6>
-
-      <h4 class="news-card-vertical-information-title">
-        Jujutsu Kaisen/7-11 Collab Offers Wild New Art
-      </h4>
-
-      <h6 class="news-card-vertical-information-description">
-        Jujutsu Kaisen has become one of the biggest Shonen series that runs in the regularly released publication of Weekly Shonen Jump...
-      </h6>
-
-      <h6 class="news-card-vertical-information-date">
-        2022-05-07 20:59:00
-      </h6>
-    </div>
-  </div>
+ 
+  ${withImg}
 </fieldset>
-</div>`
+`;
+  return detail;
+}
+
+function AllDetail(data) {
+  let detail = `
+  <div id="home" class="main-pages">
+    <div id="home-banner" class="home-sections">
+    ${createBannerH(data)}
+    ${createBannerL(data)}  
+  </div>
+  ${createNewsFeed1(data)}
+  ${createSide(data)}
+  ${createSport(data)}
+  ${createWorld(data)}
+  ${createNewsFeed2(data)}
+  ${createReadmore(data)}
+  </div>
+  `;
+
+  return detail;
+}

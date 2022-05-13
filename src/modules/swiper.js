@@ -1,11 +1,12 @@
-const swiper = new Swiper('.swiper', {
+function bannerSwiper(){
+  const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
     spaceBetween: 30,
     centeredSlides: true,
     autoplay: {
-      delay: 10000000,
+      delay: 3000,
       disableOnInteraction: false,
     },
     spaceBetween: 100,
@@ -13,8 +14,10 @@ const swiper = new Swiper('.swiper', {
     pagination: {
       el: '.swiper-pagination',
     },
-  
   });
-  
+  return swiper
+}
 
-export {swiper}
+
+
+export {bannerSwiper}

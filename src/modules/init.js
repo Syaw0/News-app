@@ -1,0 +1,2 @@
+import { getHomeData } from "./getHomeData";
+
