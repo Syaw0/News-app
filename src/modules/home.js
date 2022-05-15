@@ -55,7 +55,7 @@ function createBannerL(data) {
     <div class="swiper-wrapper">
       <!-- Slides -->
 
-      <div class="swiper-slide">
+      <div class="swiper-slide news-card" title="top-withImg-1">
         <img src="${data["top"]["withImg"][1]["image_url"]}" alt="" class="swiper-lazy" />
         <div class="swiper-lazy-preloader"></div>
         <div class="swiper-slide-informaion">
@@ -69,7 +69,7 @@ function createBannerL(data) {
         </div>
       </div>
 
-      <div class="swiper-slide">
+      <div class="swiper-slide news-card " title="top-withImg-2">
         <img src="${data["top"]["withImg"][2]["image_url"]}" alt="" class="swiper-lazy" />
         <div class="swiper-lazy-preloader"></div>
         <div class="swiper-slide-informaion">
@@ -83,7 +83,7 @@ function createBannerL(data) {
         </div>
       </div>
 
-      <div class="swiper-slide">
+      <div class="swiper-slide news-card" title="top-withImg-3">
         <img src="${data["top"]["withImg"][3]["image_url"]}" alt="" class="swiper-lazy" />
         <div class="swiper-lazy-preloader"></div>
         <div class="swiper-slide-informaion">
@@ -105,6 +105,34 @@ function createBannerL(data) {
 }
 
 function createNewsFeed1(data) {
+
+  let withImg = "";
+  let element;
+
+  for (let num = 5; num != 9; num++) {
+    element = `
+    <div class="news-card-vertical news-card" title="top-withImg-${num}">
+    <div class="news-card-vertical-img-con">
+      <img src="${data["top"]["withImg"][num]["image_url"]}" alt="" />
+    </div>
+    <div class="news-card-vertical-information">
+      <h4 class="news-card-vertical-information-title">
+      ${data["top"]["withImg"][num]["title"]}
+      </h4>
+
+      <h6 class="news-card-vertical-information-description">
+      ${data["top"]["withImg"][num]["description"]}
+      </h6>
+
+      <h6 class="news-card-vertical-information-date">
+      ${data["top"]["withImg"][num]["pubDate"]}
+      </h6>
+    </div>
+  </div>
+  `;
+  withImg += element;
+  }
+
   let detail = `
   <fieldset id="home-newsfeed-con" class="home-sections">
   <legend id="home-newsfeed-legend" class="home-sections-legends">
@@ -123,78 +151,7 @@ function createNewsFeed1(data) {
   </button>
 
   <div id="home-newsfeed-news-con">
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="${data["top"]["withImg"][5]["image_url"]}" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-        ${data["top"]["withImg"][5]["title"]}
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-        ${data["top"]["withImg"][5]["description"]}
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-        ${data["top"]["withImg"][5]["pubDate"]}
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="${data["top"]["withImg"][6]["image_url"]}" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-        ${data["top"]["withImg"][6]["title"]}
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-        ${data["top"]["withImg"][6]["description"]}
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-        ${data["top"]["withImg"][6]["pubDate"]}
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="${data["top"]["withImg"][7]["image_url"]}" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-        ${data["top"]["withImg"][7]["title"]}
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-        ${data["top"]["withImg"][7]["description"]}
-        </h6>
-
-        <h6 class="news-card-vertical-information-date">
-        ${data["top"]["withImg"][7]["pubDate"]}
-        </h6>
-      </div>
-    </div>
-    <div class="news-card-vertical">
-      <div class="news-card-vertical-img-con">
-        <img src="${data["top"]["withImg"][8]["image_url"]}" alt="" />
-      </div>
-      <div class="news-card-vertical-information">
-        <h4 class="news-card-vertical-information-title">
-        ${data["top"]["withImg"][8]["title"]}
-        </h4>
-
-        <h6 class="news-card-vertical-information-description">
-        ${data["top"]["withImg"][8]["description"]}
-        </h6>
-        
-        <h6 class="news-card-vertical-information-date">
-        ${data["top"]["withImg"][8]["pubDate"]}
-        </h6>
-      </div>
-    </div>
+    ${withImg}
   </div>
 </fieldset>`;
 
@@ -208,7 +165,7 @@ function createSide(data) {
   let element2;
   for (let num = 0; num != 10; num++) {
     element = `
-    <div class="side-news-without-img">
+    <div class="side-news-without-img news-card" title="top-withoutImg-${num}">
     <h6 class="side-news-without-img-category">
     ${data["top"]["withoutImg"][num]["category"][0]}
     </h6>
@@ -225,7 +182,7 @@ function createSide(data) {
 
   for (let num = 9; num != 14; num++) {
     element2 = `
-    <div class="side-news-with-img">
+    <div class="side-news-with-img news-card" title="top-withImg-${num}">
     <div class="side-news-with-img-imgcon">
       <img src="${data["top"]["withImg"][num]["image_url"]}" alt="" />
     </div>
@@ -309,7 +266,7 @@ function createSport(data) {
   let element;
   for (let num = 1; num != 7; num++) {
     element = `
-  <div class="news-card-vertical">
+  <div class="news-card-vertical news-card" title="sport-${num}" >
         <div class="news-card-vertical-img-con">
           <img src="${data["sport"][num]["image_url"]}" alt="" />
         </div>
@@ -382,7 +339,7 @@ function createWorld(data) {
   let element;
   for (let num = 1; num != 5; num++) {
     element = `
-    <div class="news-card-vertical">
+    <div class="news-card-vertical news-card" title="world-${num}">
     <div class="news-card-vertical-img-con">
       <img src="${data["world"][num]["image_url"]}" alt="" />
     </div>
@@ -453,7 +410,7 @@ function createNewsFeed2(data) {
   let element;
   for (let num = 14; num != 19; num++) {
     element = `
-    <div class="news-card-vertical">
+    <div class="news-card-vertical news-card" title="top-withImg-${num}">
     <div class="news-card-vertical-img-con">
       <img src="${data["top"]["withImg"][num]["image_url"]}" alt="" />
     </div>
@@ -505,7 +462,7 @@ function createReadmore(data) {
   let element;
   for (let num = 20; num != 26; num++) {
     element = `
-  <div class="news-card-vertical">
+  <div class="news-card-vertical news-card" title="top-withImg-${num}" >
   <div class="news-card-vertical-img-con">
     <img src="${data["top"]["withImg"][num]["image_url"]}" alt="" />
   </div>
