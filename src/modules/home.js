@@ -105,7 +105,6 @@ function createBannerL(data) {
 }
 
 function createNewsFeed1(data) {
-
   let withImg = "";
   let element;
 
@@ -130,7 +129,7 @@ function createNewsFeed1(data) {
     </div>
   </div>
   `;
-  withImg += element;
+    withImg += element;
   }
 
   let detail = `

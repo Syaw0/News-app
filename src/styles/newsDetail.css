@@ -1,186 +1,183 @@
 #news-detail-con {
-    width: 100%;
-    display: grid;
-    padding: var(--mainpad);
+  width: 100%;
+  display: grid;
+  padding: var(--mainpad);
+}
+
+#news-detail-news {
+  grid-column: 1/16;
+  grid-row: 1;
+  width: 100%;
+  display: grid;
+  /* padding: var(--mainpad); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-right: 1rem;
+}
+
+#news-detail-news-header {
+  font-family: "butler";
+  font-weight: 600;
+  font-style: normal;
+  padding: 0.7rem 0rem 0.4rem 0rem;
+  color: var(--co3);
+}
+
+#news-detail-news-date-writer {
+  display: flex;
+  font-family: "roboto";
+  font-weight: 100;
+  font-style: normal;
+  padding: 0rem 0rem 1.2rem 0rem;
+  color: var(--co3);
+}
+
+#news-detail-news-date {
+  padding-left: 0.5rem;
+
+  font-weight: 100;
+}
+
+#news-detail-news-writer {
+  padding-right: 0.5rem;
+  font-weight: 100;
+}
+
+#news-detail-news-img-con {
+}
+
+#news-detail-news-img-con img {
+  width: 100%;
+  height: auto;
+}
+
+#news-detail-news-detail-con {
+}
+
+#news-detail-news-detail {
+  padding-top: 2rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.7px;
+  font-family: "roboto";
+  font-weight: 300;
+  font-style: normal;
+  color: var(--co3);
+}
+
+#news-detail-news-footer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+#news-detail-news-footer-tags {
+}
+
+#news-detail-news-footer-tags-header {
+  font-family: "roboto";
+  font-weight: bold;
+  font-style: normal;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  color: var(--co3);
+}
+
+.tags {
+}
+
+#news-detail-news-footer .btn-ghost {
+}
+#news-detail-news-footer .btn-raised:hover {
+  background-color: var(--co2);
+}
+#news-detail-news-footer .btn-raised:focus {
+  background-color: var(--co3);
+  color: var(--co1);
+}
+
+#news-detail-nav {
+  grid-column: 16/20;
+  grid-row: 1;
+  padding-left: var(--homepadbcon);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  color: var(--co3);
+  cursor: default;
+  border: none;
+}
+
+#newsDetail-readmore-con {
+  grid-column: 1/20;
+  grid-row: 2;
+}
+
+@media only screen and (max-width: 1000px) {
+  #news-detail-nav {
+    display: none;
   }
-  
-  #news-detail-news {
-    grid-column: 1/16;
-    grid-row: 1;
-    width: 100%;
-    display: grid;
-    /* padding: var(--mainpad); */
+
+  #news-detail-con {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-    padding-right: 1rem;
   }
-  
+  #news-detail-news {
+    padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
   #news-detail-news-header {
-    font-family: "butler";
-    font-weight: 600;
-    font-style: normal;
-    padding: 0.7rem 0rem 0.4rem 0rem;
-    color: var(--co3);
+    font-size: 1.5rem;
   }
-  
+
   #news-detail-news-date-writer {
-    display: flex;
-    font-family: "roboto";
-    font-weight: 100;
-    font-style: normal;
-    padding: 0rem 0rem 1.2rem 0rem;
-    color: var(--co3);
+    font-size: 0.8rem;
   }
-  
+
   #news-detail-news-date {
-    padding-left: 0.5rem;
-  
     font-weight: 100;
   }
-  
+
   #news-detail-news-writer {
-    padding-right: 0.5rem;
     font-weight: 100;
   }
-  
-  #news-detail-news-img-con {
-  }
-  
-  #news-detail-news-img-con img {
-    width: 100%;
-    height: auto;
-  }
-  
-  #news-detail-news-detail-con {
-  }
-  
+
   #news-detail-news-detail {
-    padding-top: 2rem;
+    padding-top: 1rem;
     line-height: 1.4rem;
     letter-spacing: 0.7px;
     font-family: "roboto";
     font-weight: 300;
     font-style: normal;
-    color: var(--co3);
   }
-  
-  #news-detail-news-footer {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 1rem;
-  }
-  
-  #news-detail-news-footer-tags {
-  }
-  
+
   #news-detail-news-footer-tags-header {
     font-family: "roboto";
     font-weight: bold;
     font-style: normal;
     padding-bottom: 1rem;
     padding-top: 1rem;
-    color: var(--co3);
   }
-  
+
   .tags {
   }
-  
+
   #news-detail-news-footer .btn-ghost {
-    
-  }
-  #news-detail-news-footer .btn-raised:hover {
-    background-color: var(--co2);
-  }
-  #news-detail-news-footer .btn-raised:focus {
-    background-color: var(--co3);
-    color: var(--co1);
-  }
-  
-  #news-detail-nav {
-    grid-column: 16/20;
-    grid-row: 1;
-    padding-left: var(--homepadbcon);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    color: var(--co3);
-    cursor: default;
+    font-size: 0.7rem;
     border: none;
+    padding: 0.5rem;
   }
-  
-  #newsDetail-readmore-con {
-    grid-column: 1/20;
-    grid-row: 2;
-    
+  #news-detail-news-footer .btn-raised {
+    font-size: 0.7rem;
   }
-  
-  @media only screen and (max-width: 1000px) {
-    #news-detail-nav {
-      display: none;
-    }
-  
-    #news-detail-con {
-      display: flex;
-      flex-direction: column;
-    }
-    #news-detail-news {
-      padding-right: 0;
-    }
-  }
-  
-  @media only screen and (max-width: 500px) {
-    #news-detail-news-header {
-      font-size: 1.5rem;
-    }
-  
-    #news-detail-news-date-writer {
-      font-size: 0.8rem;
-    }
-  
-    #news-detail-news-date {
-      font-weight: 100;
-    }
-  
-    #news-detail-news-writer {
-      font-weight: 100;
-    }
-  
-    #news-detail-news-detail {
-      padding-top: 1rem;
-      line-height: 1.4rem;
-      letter-spacing: 0.7px;
-      font-family: "roboto";
-      font-weight: 300;
-      font-style: normal;
-    }
-  
-    #news-detail-news-footer-tags-header {
-      font-family: "roboto";
-      font-weight: bold;
-      font-style: normal;
-      padding-bottom: 1rem;
-      padding-top: 1rem;
-    }
-  
-    .tags {
-    }
-  
-    #news-detail-news-footer .btn-ghost {
-      font-size: 0.7rem;
-      border: none;
-      padding: 0.5rem;
-    }
-    #news-detail-news-footer .btn-raised {
-      font-size: 0.7rem;
-    }
-  }
-  @media only screen and (max-width: 350px) {
-  }
-  
+}
+@media only screen and (max-width: 350px) {
+}
